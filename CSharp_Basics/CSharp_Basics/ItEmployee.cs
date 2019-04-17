@@ -12,17 +12,23 @@ namespace CSharp_Basics
 
         public ItEmployee(string firstName, int stringID, string department, string programmingLanguage) : base (firstName,stringID, department)
         {
-            //this.ProgrammingLanguage = programmingLanguage;
+            this.ProgrammingLanguage = ProgrammingLanguage;
 
-            ProgrammingLanguages temp1;
-            Enum.TryParse(programmingLanguage, out temp1);
-            this.ProgrammingLanguage = temp1;
+            //ProgrammingLanguages temp1;
+            //Enum.TryParse(programmingLanguage, out temp1);
+            //this.ProgrammingLanguage = temp1;
         }
         public ItEmployee(string firstName, int stringID, Locations department, string programmingLanguage) : base(firstName, stringID, department)
         {
+            this.ProgrammingLanguage = ProgrammingLanguage;    
+        }
+        public ItEmployee(string firstName, int stringID, Locations department, ProgrammingLanguages programmingLanguage) : base(firstName, stringID, department)
+        {
             this.ProgrammingLanguage = ProgrammingLanguage;
-
-      
+        }
+        public ItEmployee(string firstName, int stringID, string department, ProgrammingLanguages programmingLanguage) : base(firstName, stringID, department)
+        {
+            this.ProgrammingLanguage = ProgrammingLanguage;
         }
         public string ProgrammingString()
         {
