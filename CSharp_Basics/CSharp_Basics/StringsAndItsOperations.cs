@@ -87,9 +87,33 @@ namespace CSharp_Basics
         public void Substrings()
         {
             var theString =
-                "The interesting thing about London is that there are always stylish surprises around every corner.";
-            string result = theString.Substring(16, 5);
-            Assert.AreEqual(result, "thing");
+                "The interesting, thing about London. is that there, are always: stylish surprises, around, every corner.";
+            //string result = theString.Substring(17, 5);
+            //Assert.AreEqual(result, "thing");
+
+            //int index = theString.LastIndexOf(@".");
+            Console.WriteLine("See text: {0}", theString);
+            theString = theString.Replace(",", ",\n");
+            Console.WriteLine("New text 1: {0}", theString);
+            theString = theString.Replace(".", ".\n");
+            Console.WriteLine("New text 2: {0}", theString);
+            theString = theString.Replace(":", ":\n");
+            Console.WriteLine("New text 3: {0}", theString);
+        }
+
+        [Test]
+        public void Substrings2()
+        {
+            var Poem =
+                "The interesting, thing about London. is that there, are always: stylish surprises, around, every corner.";
+            var split = Poem.Split(',');
+            //string result = theString.Substring(17, 5);
+            //Assert.AreEqual(result, "thing");
+
+            //int index = theString.LastIndexOf(@".");
+            
+            Poem = string.Join("\n", split);
+            Console.WriteLine("See text: {0}", split);
         }
     }
 }
