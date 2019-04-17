@@ -20,6 +20,7 @@ namespace CSharp_Basics
         public void Bascis_Of_Strings()
         {
             string Example = "This is example string - this string is an example";
+            Assert.That(Example, Is.Not.Null);
         }
 
         /// <summary>
@@ -70,10 +71,12 @@ namespace CSharp_Basics
         {
             int x = 500;
             int y = 453;
-            string result="";
+            string result=$"{ x}{ y}";
 
-            StringAssert.Contains(result, x.ToString());
-            StringAssert.Contains(result, y.ToString());
+            StringAssert.Contains(x.ToString(),result);
+            StringAssert.Contains(y.ToString(),result);
+           
+            Assert.AreEqual(result, x.ToString()+y.ToString(),"Wrong value.");
         }
 
         /// <summary>
