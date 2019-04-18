@@ -69,5 +69,10 @@ namespace CSharp_Basics
                 return false;
             }
         }
+
+        public string PrintEmployee()
+        {
+            return $"Name:{firstName} Badge:{stringID}";
+        }
     }
 }

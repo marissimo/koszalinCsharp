@@ -56,7 +56,7 @@ namespace CSharp_Basics
             Assert.That(employee2.firstName, Is.EqualTo("Bartek"));
             Assert.That(employee2.stringID, Is.EqualTo(61111));
             Assert.That(employee2.LocationString, Is.EqualTo("Szczecin"));
-            Assert.That(employee2.ProgrammingString, Is.EqualTo("Csharp")); //Here is something wrong!!!! I have Python but it passes when I have Csharp? why?
+            Assert.That(employee2.ProgrammingString, Is.EqualTo("Python")); //Here is something wrong!!!! I have Python but it passes when I have Csharp? why?
         }
         [TestCase(Locations.Szczecin, true)]
         [TestCase(Locations.Koszalin, true)]
@@ -86,6 +86,17 @@ namespace CSharp_Basics
             Assert.Throws<ArgumentOutOfRangeException>(
                 () => new Employee("Bartek", badge, loc)
             );
+        }
+
+        [Test]
+
+        public void Example()
+        {
+            var employee1 = new ItEmployee("Emka", 66666, Locations.Koszalin, ProgrammingLanguages.Csharp);
+            var employee2 = new Employee("Bartek", 61111, Locations.Szczecin);
+            Console.WriteLine(employee1.PrintEmployee());
+            Console.WriteLine(employee2.PrintEmployee());
+
         }
     }
 }

@@ -22,7 +22,7 @@ namespace CSharp_Basics
         {
             this.ProgrammingLanguage = ProgrammingLanguage;    
         }
-        public ItEmployee(string firstName, int stringID, Locations department, ProgrammingLanguages programmingLanguage) : base(firstName, stringID, department)
+        public ItEmployee(string firstName, int stringID, Locations department, ProgrammingLanguages ProgrammingLanguage) : base(firstName, stringID, department)
         {
             this.ProgrammingLanguage = ProgrammingLanguage;
         }
@@ -33,6 +33,11 @@ namespace CSharp_Basics
         public string ProgrammingString()
         {
             return ProgrammingLanguage.ToString();
+        }
+
+        public new string PrintEmployee()
+        {
+            return $"Name:{firstName} Badge:{stringID} Lang: {ProgrammingLanguage}";
         }
     }
 }
